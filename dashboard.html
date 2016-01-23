@@ -1,0 +1,1176 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+<html class="js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><!--<![endif]--><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>TW.edu CTF 2015</title>
+        <meta name="description" content="">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="shortcut icon" type="image/png" href="/static/favicon.ico">
+
+        <link rel="stylesheet" href="/static/css/normalize.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans">
+        <link rel="stylesheet" href="/static/css/main.css">
+        
+<link rel="stylesheet" href="/static/js/vendor/fancybox/jquery.fancybox.css">
+<style>
+.fancybox-skin {
+	color: #ccc;
+	background-color: #333;
+}
+.fancybox-contents {
+	width: 800px;
+	height: 600px;
+}
+</style>
+
+        <script src="//www.google-analytics.com/analytics.js"></script><script src="/static/js/vendor/modernizr-2.6.2.min.js"></script><style type="text/css"></style>
+    <style type="text/css">.fancybox-margin{margin-right:0px;}</style></head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <nav id="top-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <a class="navbar-brand" href="/">TW.edu CTF 2015</a>
+                <ul class="nav navbar-nav">
+                    
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li><a href="/team/1">My Team</a></li>
+                    <li><a href="/scoreboard">Scoreboard</a></li>
+                    <li><a href="/trend">Trend</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                    
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a id="timer" href="#">Contest is over</a>
+                        <input type="hidden" id="contest_start_time" value="1452052800.0">
+                        <input type="hidden" id="contest_end_time" value="1452441600.0">
+                        <input type="hidden" id="current_time" value="1453538817.320994">
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        
+        
+
+        <div id="content" class="container">
+            
+<div class="col-lg-9">
+
+<div id="dashboard-announcements">
+  <ul><li><a href="javascript:void(0)">2016-01-10 04:00:06 UTC: [公告] 最後一波提示上了唷，最後十二小時加油!</a><div style="display: none;">最後一波提示上了唷，最後十二小時加油!</div></li><li><a href="javascript:void(0)">2016-01-08 18:38:52 UTC: [公告] Login-As-Admin-3 更新</a><div style="display: none;">認證部份的資料結構已更新，會讓你得到更多的資訊。
+請注意，舊有的 cookie 會因為更新欄位而失效，請清除舊有的 cookie 並重試。
+
+The data structure for authentication is changed. It will give you more information. 
+Notice that, old cookies will become invalid. Please remember to clean it and try again!</div></li><li><a href="javascript:void(0)">2016-01-08 17:18:59 UTC: [公告] SecretGarden-Revenge 出來啦，另 dubblesort 分數提升至 250</a><div style="display: none;">SecretGarden-Revenge 出來啦，另 dubblesort 分數提升至 250</div></li><li><a href="javascript:void(0)">2016-01-08 17:17:55 UTC: [公告] 給大家的週休二日禮物，野生的 random-2 出現了!</a><div style="display: none;">給大家的週休二日禮物，野生的 random-2 出現了!</div></li><li><a href="javascript:void(0)">2016-01-08 16:03:52 UTC: [公告] 第一波提示已放上</a><div style="display: none;">第一波提示已放上</div></li><li><a href="javascript:void(0)">2016-01-06 19:32:22 UTC: [公告] Rilakkuma 原始碼更動，但不影響作答思路</a><div style="display: none;">Rilakkuma 原始碼更動，但不影響作答思路</div></li><li><a href="javascript:void(0)">2016-01-06 13:24:55 UTC: [公告] Seethefile-2 以及 Y-2 出現了，各位同學加油!</a><div style="display: none;">Seethefile-2 以及 Y-2 出現了，各位同學加油!</div></li><li><a href="javascript:void(0)">2016-01-06 08:24:09 UTC: [公告] ShellMe Flag 權限設置有誤，請有拿到 shell 同學再次讀一下 Flag</a><div style="display: none;">ShellMe Flag 權限設置有誤，請有拿到 shell 同學再次讀一下 Flag</div></li><li><a href="javascript:void(0)">2016-01-06 07:31:50 UTC: [公告] EVE-2 原 Flag 已更新，以解出同學可嘗試重送 Flag </a><div style="display: none;">EVE-2 原 Flag 已更新，以解出同學可嘗試重送 Flag </div></li><li><a href="javascript:void(0)">2016-01-06 06:59:36 UTC: [公告] bofsofun 調整分數至 150 分</a><div style="display: none;">bofsofun 調整分數至 150 分</div></li><li><a href="javascript:void(0)">2016-01-06 06:45:38 UTC: [公告] Russian Dolls 以及 seethefile 題目異動</a><div style="display: none;">seethefile binary 改變過，請重新下載檔案作答，Russian Dolls 更新 修正一些小地方，如果要繼續做原版也可，會比較困難OwO 
+</div></li><li><a href="javascript:void(0)">2016-01-06 04:05:09 UTC: [公告] Flag 形式為 CTF{printable}</a><div style="display: none;">[公告] Flag 形式為 CTF{printable}</div></li><li><a href="javascript:void(0)">2016-01-04 17:03:42 UTC: [公告] 提示放出時間</a><div style="display: none;">第一波提示放出時間為 1/8 24:00，第二波提示放出時間為  1/10 12:00 </div></li><li><a href="javascript:void(0)">2016-01-04 10:39:39 UTC: [公告] 線上聊天平台</a><div style="display: none;">任何問題，Flag 錯誤、檔案無法下載、網站打不開，可在 http://tlk.io/csie_ctf 發問，但嚴禁公開、交換 flag</div></li><li><a href="javascript:void(0)">2016-01-03 12:38:08 UTC: [公告] CTF 競賽時間</a><div style="display: none;">比賽時間自 1/06 12:00 到 1/10 24:00 共 108 小時</div></li></ul>
+</div>
+
+<div id="dashboard-problems">
+
+
+
+<ul id="problem-list">
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">mini</span><br>
+				<span class="tags">pwn</span>
+			</p></div>
+			 
+			<div class="description"><p>Useless <a href="https://www.dropbox.com/s/xsfduwjbwyhunlg/mini?dl=1">minibin</a><br>nc 10.second.ninja 9090</p>
+
+<p></p></div>
+			 
+			<div class="hint"><p></p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-mini">
+				50
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">magicbox</span><br>
+				<span class="tags">pwn</span>
+			</p></div>
+			 
+			<div class="description"><p>This is a magic box.  <br>nc pwning.pwnable.tw 56746</p>
+
+<p><a href="https://www.dropbox.com/s/etnvm98aay0b7bk/magicbox?dl=1">binary</a></p></div>
+			 
+			<div class="hint"><p></p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-magicbox">
+				100
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">bofsofun</span><br>
+				<span class="tags">pwn</span>
+			</p></div>
+			 
+			<div class="description"><p>Do you know Stack overflow attack ? <br>nc pwning.pwnable.tw 48879</p>
+
+<p><a href="https://www.dropbox.com/s/eb4bulexoqbk4m3/bofsofun?dl=1">binary</a></p></div>
+			 
+			<div class="hint"><p>多多觀察一下，可能會發現有趣的地方</p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-bofsofun">
+				150
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">ReverseStr</span><br>
+				<span class="tags">pwn</span>
+			</p></div>
+			 
+			<div class="description"><p>!! efil ruoy esreveR <br>nc pwning.pwnable.tw 55981</p>
+
+<p><a href="https://www.dropbox.com/s/9a5xorz340fglwq/reversestr?dl=1">binary</a><br><a href="https://www.dropbox.com/s/k9zvjfwlk7advk6/libc.so.6-32?dl=1">libc</a></p></div>
+			 
+			<div class="hint"><p>stack migration</p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-ReverseStr">
+				160
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">fmtsofun</span><br>
+				<span class="tags">pwn</span>
+			</p></div>
+			 
+			<div class="description"><p>Do you know format string attack ? <br>nc pwning.pwnable.tw 56026</p>
+
+<p><a href="https://www.dropbox.com/s/itpbbirw54jixix/fmtsofun?dl=1">binary</a></p></div>
+			 
+			<div class="hint"><p>%n is so powerful</p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-fmtsofun">
+				150
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">dubblesort</span><br>
+				<span class="tags">pwn</span>
+			</p></div>
+			 
+			<div class="description"><p>I like dubblesort !! <br>nc ctf.pwnable.tw 57005</p>
+
+<p><a href="https://www.dropbox.com/s/fq3j8m6yizxs9ag/dubblesort?dl=1">binary</a><br><a href="https://www.dropbox.com/s/k9zvjfwlk7advk6/libc.so.6-32?dl=1">libc</a></p></div>
+			 
+			<div class="hint"><p>sort the memory !!</p>
+
+<p>Address and canary have some feature.</p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-dubblesort">
+				250
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">Seethefile</span><br>
+				<span class="tags">pwn</span>
+			</p></div>
+			 
+			<div class="description"><p>Can you see anything ? <br>nc ctf.pwnable.tw 31337</p>
+
+<p>Seethefile-2 : Get shell</p>
+
+<p><a href="https://www.dropbox.com/s/owaqtyyc4gygtkc/seethefile?dl=1">binary</a></p></div>
+			 
+			<div class="hint"><p>You need to leak some infomation first.</p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-Seethefile-1">
+				300
+			</li>
+			
+			<li id="flag-id-Seethefile-2">
+				200
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">SecretGarden</span><br>
+				<span class="tags">pwn</span>
+			</p></div>
+			 
+			<div class="description"><p>Find the flag in the garden. <br>nc ctf.pwnable.tw 56746</p>
+
+<p>SecretGarden-2 :Get shell</p>
+
+<p><a href="https://www.dropbox.com/s/ew5jdijw0wj037o/secretgarden?dl=1">binary</a><br><a href="https://www.dropbox.com/s/dflphr56h9b87v9/libc.so.6?dl=1">libc</a></p></div>
+			 
+			<div class="hint"><p>Heap exploitation</p>
+
+<p>Fastbin corruption</p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-SecretGarden-1">
+				200
+			</li>
+			
+			<li id="flag-id-SecretGarden-2">
+				400
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">SecretGarden-Revenge</span><br>
+				<span class="tags">pwn</span>
+			</p></div>
+			 
+			<div class="description"><p>I patch some vulnerability in secretgarden. <br>Try to find the flag in the garden a again. <br>nc pwning.pwnable.tw 31337 </p>
+
+<p><a href="https://www.dropbox.com/s/q9gxl2ddb82va6b/secretgarden.patch?dl=1">binary</a></p></div>
+			 
+			<div class="hint"><p></p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-SecretGarden-Revenge">
+				200
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">RSA</span><br>
+				<span class="tags">crypto</span>
+			</p></div>
+			 
+			<div class="description"><p>Just RSA.<br>https://www.dropbox.com/s/isnfvts5an2jwpu/rsa.zip?dl=0</p></div>
+			 
+			<div class="hint"><p></p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-RSA">
+				50
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">CTR</span><br>
+				<span class="tags">crypto</span>
+			</p></div>
+			 
+			<div class="description"><p>CTR mode has significant efficiency advantages over the standard encryption, but...<br>http://52.68.224.122:9010/</p></div>
+			 
+			<div class="hint"><p></p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-CTR">
+				100
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">Alien</span><br>
+				<span class="tags">crypto</span>
+			</p></div>
+			 
+			<div class="description"><p>https://www.dropbox.com/s/76tpj8dm2lz64wc/alien.png<br>flag is CTF{The decrypted message removing all spaces and punctuation marks}</p></div>
+			 
+			<div class="hint"><p></p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-Alien">
+				130
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">mayday</span><br>
+				<span class="tags">crypto</span>
+			</p></div>
+			 
+			<div class="description"><p>Here are some encrypted messages sent to Mayday.<br>https://www.dropbox.com/s/lwjkboz8ee8wz6l/mayday.zip?dl=0</p></div>
+			 
+			<div class="hint"><p></p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-mayday">
+				150
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">share</span><br>
+				<span class="tags">crypto</span>
+			</p></div>
+			 
+			<div class="description"><p>Generating primes are expensive, let's share its.<br>https://www.dropbox.com/s/jd6vly4hqtanjbd/share.zip?dl=0</p></div>
+			 
+			<div class="hint"><p></p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-share">
+				150
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">LEA</span><br>
+				<span class="tags">crypto</span>
+			</p></div>
+			 
+			<div class="description"><p>Yes, "leave as final exam".<br>http://52.68.224.122:9000/</p></div>
+			 
+			<div class="hint"><p></p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-LEA">
+				200
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">OTP</span><br>
+				<span class="tags">crypto</span>
+			</p></div>
+			 
+			<div class="description"><p>One-time pad has perfect secrecy...?<br>https://www.dropbox.com/s/314w5a5hntqhn8l/otp.zip?dl=0</p></div>
+			 
+			<div class="hint"><p></p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-OTP">
+				300
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">Lucky</span><br>
+				<span class="tags">crypto</span>
+			</p></div>
+			 
+			<div class="description"><p>Let's play a game!<br>nc 52.68.224.122 9020<br>https://www.dropbox.com/s/c5vnss4iqlfphjl/lucky?dl=0</p></div>
+			 
+			<div class="hint"><p></p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-Lucky">
+				300
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">random</span><br>
+				<span class="tags">crypto</span>
+			</p></div>
+			 
+			<div class="description"><p>Some random things.<br>nc 52.68.224.122 9030<br>https://www.dropbox.com/s/uoynsdoba7uh69s/random?dl=0</p>
+
+<p>Seems that it wasn't random enough, so here's more randomness!<br>nc 52.68.224.122 9040<br>https://www.dropbox.com/s/4hiv1zno836nxry/random2?dl=0</p></div>
+			 
+			<div class="hint"><p></p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-random">
+				500
+			</li>
+			
+			<li id="flag-id-random-2">
+				200
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">WebBabyFirst</span><br>
+				<span class="tags">web</span>
+			</p></div>
+			 
+			<div class="description"><p>Snoopy put all the flags in his <a href="http://babyfirst.cebrusfs.com/">website</a>, could you find them?</p></div>
+			 
+			<div class="hint"><p>The server gives you all the flags when you access the website.<br>You don't need to interactive or send some special requests. </p>
+
+<p>Flag_1: Did you find it? If so, it's some kind of encoding, can you decode it?"</p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-WebBabyFirst-1">
+				5
+			</li>
+			
+			<li id="flag-id-WebBabyFirst-2">
+				10
+			</li>
+			
+			<li id="flag-id-WebBabyFirst-3">
+				10
+			</li>
+			
+			<li id="flag-id-WebBabyFirst-4">
+				10
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">Mission</span><br>
+				<span class="tags">web</span>
+			</p></div>
+			 
+			<div class="description"><p>Snoopy give you some <a href="http://mission.cebrusfs.com/">missions</a>.<br>If you can finish them, he will give you flags.</p></div>
+			 
+			<div class="hint"><p>Mission1: <br>How do you let the server know you accepted that encoding?</p>
+
+<p>Mission2: <br>You got the "502 Not implemented". <br>What does it mean?<br>Do you know what has been implemented?</p>
+
+<p>Mission3: <br>You request GET/POST with not only a string but also an array.<br>You can encode non-printable characters in URL.</p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-Mission-1">
+				50
+			</li>
+			
+			<li id="flag-id-Mission-2">
+				75
+			</li>
+			
+			<li id="flag-id-Mission-3">
+				100
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">Overthewire</span><br>
+				<span class="tags">web</span>
+			</p></div>
+			 
+			<div class="description"><p><a href="http://overthewire.hackme.cc/">http://overthewire.hackme.cc/</a></p></div>
+			 
+			<div class="hint"><p>這種漏洞的名字叫做變量覆蓋</p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-Overthewire">
+				100
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">SQLAB</span><br>
+				<span class="tags">web</span>
+			</p></div>
+			 
+			<div class="description"><p><a href="http://sqlab.hackme.cc/">http://sqlab.hackme.cc/</a></p></div>
+			 
+			<div class="hint"><p>是不是少過濾什麼?</p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-SQLAB">
+				200
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">Bypasser</span><br>
+				<span class="tags">web</span>
+			</p></div>
+			 
+			<div class="description"><p><a href="http://bypasser.hackme.cc/">http://bypasser.hackme.cc/</a></p></div>
+			 
+			<div class="hint"><p>man bash</p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-Bypasser">
+				200
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">ShellMe</span><br>
+				<span class="tags">web</span>
+			</p></div>
+			 
+			<div class="description"><p><a href="http://shellme.hackme.cc/">http://shellme.hackme.cc/</a></p></div>
+			 
+			<div class="hint"><p>上課有講到</p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-ShellMe">
+				200
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">ST2</span><br>
+				<span class="tags">web</span>
+			</p></div>
+			 
+			<div class="description"><p><a href="http://st2.hackme.cc:8080/">http://st2.hackme.cc:8080/</a><br></p></div>
+			 
+			<div class="hint"><p>上課有講到</p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-ST2">
+				200
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">Rilakkuma</span><br>
+				<span class="tags">web</span>
+			</p></div>
+			 
+			<div class="description"><p><a href="http://rilakkuma.hackme.cc/">http://rilakkuma.hackme.cc/</a><br></p></div>
+			 
+			<div class="hint"><p>PHP 有啥 wrapper 可以用?</p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-Rilakkuma">
+				300
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">Login as admin 1</span><br>
+				<span class="tags">web</span>
+			</p></div>
+			 
+			<div class="description"><p><a href="http://loginasadmin1.cebrusfs.com/">http://loginasadmin1.cebrusfs.com/</a><br>Login as admin!! </p></div>
+			 
+			<div class="hint"><p>The Flag_1 hide in the source code. Try to get the source code first.</p>
+
+<p>Flag_1: 可參考slide找靈感。如何獲得資訊？<br>Flag_2: 如何繞過 hmac_salt 的 === 是關鍵</p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-Login-as-admin-1-1">
+				50
+			</li>
+			
+			<li id="flag-id-Login-as-admin-1-2">
+				150
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">Login as admin 2</span><br>
+				<span class="tags">web, forensic</span>
+			</p></div>
+			 
+			<div class="description"><p><a href="http://loginasadmin2.cebrusfs.com/">http://loginasadmin2.cebrusfs.com/</a><br>Login as admin!! </p></div>
+			 
+			<div class="hint"><p>The Flag_1 hide in the source code. Try to get the source code first.</p>
+
+<p>Flag_1: 可參考slide找靈感。如何獲得資訊？善用工具OAO/<br>Flag_2: slide 有</p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-Login-as-admin-2-1">
+				150
+			</li>
+			
+			<li id="flag-id-Login-as-admin-2-2">
+				100
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">Login as admin 3</span><br>
+				<span class="tags">web, crypto</span>
+			</p></div>
+			 
+			<div class="description"><p><a href="http://loginasadmin3.cebrusfs.com/">http://loginasadmin3.cebrusfs.com/</a><br>Login as admin!! </p></div>
+			 
+			<div class="hint"><p>1. No source code, you have to guess what Snoopy did.<br>2. Snoopy did not store any information in the server. Authentication is based on your requests.</p>
+
+<p>Here's the source. https://www.dropbox.com/s/tjws9753vrd8q8e/source.zip</p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-Login-as-admin-3-1">
+				125
+			</li>
+			
+			<li id="flag-id-Login-as-admin-3-2">
+				150
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">executable</span><br>
+				<span class="tags">reverse</span>
+			</p></div>
+			 
+			<div class="description"><p>Run <a href="https://www.dropbox.com/s/0gczpi9uji64kg7/executable?dl=1">this</a></p></div>
+			 
+			<div class="hint"><p></p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-executable">
+				50
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">Y</span><br>
+				<span class="tags">reverse</span>
+			</p></div>
+			 
+			<div class="description"><p>Python is a clean and clear language, which is easy to understand.<br>Warning: You may need a supercomputer, or to optimize this program.<br>https://www.dropbox.com/s/35b92t3ohrsocnu/y.pyc?dl=0<br>https://www.dropbox.com/s/7jxvdvzmode2mce/y2.pyc?dl=0</p></div>
+			 
+			<div class="hint"><p></p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-Y">
+				100
+			</li>
+			
+			<li id="flag-id-Y-2">
+				150
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">Say</span><br>
+				<span class="tags">reverse</span>
+			</p></div>
+			 
+			<div class="description"><p>What do I say?<br>https://www.dropbox.com/s/sl649jp0l0rsbt4/say.aiff?dl=0</p></div>
+			 
+			<div class="hint"><p></p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-Say">
+				300
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">Eve</span><br>
+				<span class="tags">forensic</span>
+			</p></div>
+			 
+			<div class="description"><p>You sniffed some <a href="https://www.dropbox.com/s/d3uh59bg3mejcj9/eve.pcap?dl=1">tcp streams</a> from Snoopy. Can you find the secrets?<br></p></div>
+			 
+			<div class="hint"><p>1. HTTP content usually is compressed, try to decompress it.<br>2. wrong password!? Something will be wrong. Have you checked everything is correct?</p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-Eve-1">
+				50
+			</li>
+			
+			<li id="flag-id-Eve-2">
+				100
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">What is that</span><br>
+				<span class="tags">misc</span>
+			</p></div>
+			 
+			<div class="description"><p>Snoopy got a strange <a href="https://www.dropbox.com/s/1zh3k2rscek4rcy/file?dl=1">thing</a>. What's that!? Can you "decode" it?</p></div>
+			 
+			<div class="hint"><p>"file" command is your good friend.</p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-What-is-that">
+				25
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">LARGE</span><br>
+				<span class="tags">misc</span>
+			</p></div>
+			 
+			<div class="description"><p>Snoopy got a LARGE <a href="https://www.dropbox.com/s/lqx15xkfzijcxnq/flag.png">thing</a>.<br>He know if you can decode it, you can get the flag.<br></p></div>
+			 
+			<div class="hint"><p>It's just a QRcode OAO</p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-LARGE">
+				50
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">LLARGE</span><br>
+				<span class="tags">misc</span>
+			</p></div>
+			 
+			<div class="description"><p>Snoopy got the other LARGE <a href="https://www.dropbox.com/s/0xzmgl8rhpv9g1d/flag.png">thing</a>.<br>It is more difficult for you to decode it.<br></p></div>
+			 
+			<div class="hint"><p>Can not get any content or get errors when decoding? Your QRcode decoder may be broken! Try more decoder.</p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-LLARGE">
+				50
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">Russian Dolls</span><br>
+				<span class="tags">misc</span>
+			</p></div>
+			 
+			<div class="description"><p>You find a strange file called <a href="https://www.dropbox.com/s/tzfre3a71rujc1x/russian_dolls_v2?dl=1">russian_dolls_v2</a> in Snoopy's computer. Can you find the hidden secret?<br><code>MD5(russian_dolls_v2): fc3f675b06533004772135bee67d5ecd</code></p></div>
+			 
+			<div class="hint"><p>"file" command is your good friend.</p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-Russian-Dolls">
+				100
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">zxcvb</span><br>
+				<span class="tags">misc</span>
+			</p></div>
+			 
+			<div class="description"><p>John doesn't like zxcvb :((<br>Yp4U1;IKY_XX,dokt"alh"HH.soav+</p></div>
+			 
+			<div class="hint"><p>crypto slides will help you</p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-zxcvb">
+				120
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">Backup</span><br>
+				<span class="tags">misc</span>
+			</p></div>
+			 
+			<div class="description"><p>You got a encrypted <a href="https://www.dropbox.com/s/5pdkw1x94bh0org/backup.zip?dl=1">backup file</a> of Snoopy's website.<br>Can you decrypt it without the password?</p></div>
+			 
+			<div class="hint"><p>It's famous. Google it!</p>
+
+<p>zip 會從 password 計算出三把 key，再用這三把 key 做加解密。<br>在什麼情況下，你可以獲得這些 key，但是不需要知道密碼？</p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-Backup">
+				150
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	
+	<li class="problem-entry unlocked">
+		<div class="problem-info">
+			<div class="title"><p>
+				<span class="tititle">Fix</span><br>
+				<span class="tags">misc</span>
+			</p></div>
+			 
+			<div class="description"><p>Snoopy hide his flag in QRcode. Find it out!<br><a href="https://www.dropbox.com/s/82pew9ep8azepfb/fixme.png">https://www.dropbox.com/s/82pew9ep8azepfb/fixme.png</a></p></div>
+			 
+			<div class="hint"><p>There's some error in QRcode</p>
+
+<p>你可以產生一個沒有帶有error的QRcode嗎</p></div>
+		</div>
+		<ul class="flag-list">
+			
+			<li id="flag-id-Fix">
+				200
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	
+	</li>
+	
+	<li class="clearfix"></li>
+</ul>
+
+
+<script>
+ 
+var solved_flags = [""];
+solved_flags.forEach(function(flag){
+    $('#flag-id-' + flag.replace("\'", "\\'")).addClass('solved');
+});
+ 
+</script>
+</div>
+
+<div id="dashboard-submit">
+    <div class="form-group">
+        <input type="text" class="form-control" id="flag" placeholder="Submit flag here...">
+    </div>
+    <div class="form-group">
+        <button type="button" class="btn btn-default" id="flag_submit_button">Submit</button>
+        <span id="submit-status"></span>
+    </div>
+</div>
+
+</div><!-- .col-lg-9 -->
+<div class="col-lg-3">
+
+<div id="dashboard-scoreboard">
+	<table id="mini-scoreboard">
+		<tbody><tr class="entry"><td>Battləra</td><td>7120</td></tr><tr class="entry"><td>CALPIS</td><td>6570</td></tr><tr class="entry"><td>sblan</td><td>6170</td></tr><tr class="entry"><td>shareifagree</td><td>6070</td></tr><tr class="entry"><td>SCL_injection</td><td>5720</td></tr><tr class="entry"><td>Syal</td><td>5495</td></tr><tr class="entry"><td>mehot</td><td>5315</td></tr><tr class="entry"><td>UCCU</td><td>4715</td></tr><tr class="entry"><td>forx</td><td>4540</td></tr><tr class="entry"><td>q86</td><td>4210</td></tr><tr class="entry"><td>hsiaoyu</td><td>4045</td></tr><tr class="entry"><td>Come to Try Fortune</td><td>3610</td></tr><tr class="entry"><td>ZeroDegree</td><td>3610</td></tr><tr class="entry"><td>mishell</td><td>3575</td></tr><tr class="entry"><td>Connlab</td><td>3430</td></tr><tr class="entry"><td>Unnamed</td><td>3360</td></tr><tr class="entry"><td>qnivq942w</td><td>3095</td></tr><tr class="entry"><td>B04705006</td><td>3060</td></tr><tr class="entry"><td>576237422484011</td><td>2795</td></tr><tr class="entry"><td>GDB</td><td>2710</td></tr></tbody>
+	</table>
+</div>
+
+</div><!-- .col-lg-3 -->
+
+        </div>
+
+        <div id="footer">
+            <div class="container">
+                <p>© 2015 HITCON</p>
+                <p>Contact: orange (at) chroot.org</p>
+            </div>
+        </div>
+
+        <script src="/static/js/vendor/jquery-2.1.1.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src="/static/js/plugins.js"></script>
+        <script src="/static/js/main.js"></script>
+
+        
+<script src="/static/js/vendor/fancybox/jquery.fancybox.pack.js"></script>
+<script src="/static/js/vendor/pidcrypt/pidcrypt_c.js"></script>
+<script src="/static/js/vendor/pidcrypt/pidcrypt_util_c.js"></script>
+<script src="/static/js/vendor/pidcrypt/sha256_c.js"></script>
+
+<script src="/static/js/encflag.js"></script>
+<script>
+var team_id = 1;
+var submit_flag_with_rsa = false;
+</script>
+<script src="/static/js/dashboard.js"></script>
+
+
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-68176757-1');ga('send','pageview');
+        </script>
+    
+
+</body></html>
